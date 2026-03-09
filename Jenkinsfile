@@ -38,4 +38,25 @@ pipeline {
             }
         }
     }
+    pipeline {
+    agent any
+    stages {
+        // ... (tus stages anteriores siguen aquí) ...
+    }
+    
+    // NUEVO BLOQUE: Se ejecuta siempre al terminar, pase lo que pase.
+    post {
+        always {
+            echo 'Limpiando la cocina...'
+            // Borra imágenes "sueltas" que ya no se usan para liberar espacio
+            sh 'docker image prune -f'
+        }
+        success {
+            echo '🎉 ¡Pipeline completado con éxito!'
+        }
+        failure {
+            echo '🚑 ¡ALERTA! El pipeline ha fallado. Revisar logs.'
+        }
+    }
+}
 }
