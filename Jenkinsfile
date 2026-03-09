@@ -38,11 +38,7 @@ pipeline {
             }
         }
     }
-    pipeline {
-    agent any
-    stages {
-        // ... (tus stages anteriores siguen aquí) ...
-    }
+ 
     
     // NUEVO BLOQUE: Se ejecuta siempre al terminar, pase lo que pase.
     post {
