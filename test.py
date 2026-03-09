@@ -1,6 +1,6 @@
-# test.py
+# test.py modificado
 def test_hamburguesa():
-    ingrediente = "carne"
+    ingrediente = "piedra" # ¡ERROR INTENCIONADO!
     assert ingrediente == "carne", "¡Falta la carne en la hamburguesa!"
     print("Test superado: La hamburguesa tiene carne.")
 
