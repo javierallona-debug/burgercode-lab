@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Probando la hamburguesa...'
                 // Ejecutamos el archivo test.py. Si esto falla, el pipeline explota (se detiene).
-                sh 'python test.py'
+                sh 'docker run --rm burgercode-app python test.py'
             }
         }
 
